@@ -1,0 +1,266 @@
+﻿html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.table-div-grid {
+    margin-top: 10px;
+    font-family: 'Alexandria',Readex Pro, Cairo;
+    font-size: 13px;
+}
+
+.insert-button-div {
+    margin-top: 20px;
+    font-family: 'Alexandria',Readex Pro, Cairo;
+}
+
+.button-new-record {
+    background-color: #fcc236;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 3px;
+    width: 120px !important;
+    color: #565656 !important;
+    font-size: 14px !important;
+    border: 1px solid #fcc236;
+    text-align: center
+}
+
+.button-code-table {
+    background-color: #c4af7d;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 3px;
+    width: 65px !important;
+    color: white !important;
+    font-size: 10px !important;
+    border: 1px solid #c4af7d;
+    display: inline-block
+}
+
+.table .button-code-table:hover {
+    background-color: #a88d4c;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    text-decoration: none
+}
+
+.table td, .table th {
+    padding: 0.5rem;
+}
+
+.table tr:hover {
+    background-color: antiquewhite;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    cursor: pointer
+}
+
+.table td, .table th {
+    border-top: none;
+    vertical-align: inherit;
+}
+
+/*.table td {
+    bottom: -5px;
+    position: relative;
+}*/
+
+.table .button-edit-table {
+    background-color: #3a7060;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 3px;
+    width: 60px !important;
+    color: white !important;
+    font-size: 10px !important;
+    border: 1px solid #3a7060;
+    display: inline-block
+}
+
+.table .button-delete-table {
+    background-color: #dc3545;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 5px;
+    width: 60px !important;
+    color: white !important;
+    font-size: 10px !important;
+    border: 1px solid;
+    display: inline-block
+}
+
+.table .button-edit-table:hover {
+    background-color: #43816e;
+    border: 1px solid #43816e;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    text-decoration: none
+}
+
+.table .button-delete-table:hover {
+    background-color: #e77681;
+    border: 1px solid #e77681;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    text-decoration: none
+}
+
+.table .button-attach-table {
+    background-color: #814f43;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 5px;
+    width: 70px !important;
+    color: white !important;
+    font-size: 10px !important;
+    border: 1px solid;
+    display: inline-block
+}
+
+    .table .button-attach-table:hover {
+        background-color: #be8d82;
+        border: 1px solid #be8d82;
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        text-decoration: none
+    }
+
+.button-return-table {
+    background-color: #814356;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 5px;
+    width: 70px !important;
+    color: white !important;
+    font-size: 10px !important;
+    border: 1px solid;
+    display: inline-block
+}
+
+    .button-return-table:hover {
+        background-color: #9a6877;
+        border: 1px solid #9a6877;
+        transition: all .5s ease;
+        -webkit-transition: all .5s ease;
+        text-decoration: none
+    }
+
+.table .td-operations {
+    width: 80px;
+    position: relative
+}
+
+.td-operations .fa-trash-can {
+    position: absolute;
+    right: 55px;
+    color: white;
+    top: 18px;
+    font-size: 10px
+}
+
+.td-operations .fa-circle-check {
+    position: absolute;
+    right: 60px;
+    color: white;
+    top: 18px;
+    font-size: 11px;
+}
+
+.form-control {
+    line-height: 25px;
+    height: 40px;
+    font-size: 14px !important;
+}
+
+select.form-control {
+    height: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 13px !important;
+    height: auto !important;
+    line-height: 25px;
+}
+
+.optionGroup {
+    font-weight: bold;
+    padding: 40px !important
+}
+
+select.selectpicker > option {
+    padding-bottom: 30px !important;
+    font-size: 15px !important;
+    height: 100px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #dee0e0
+}
+
+.select2-container .select2-selection--single {
+    height: 40px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    left: 1px !important;
+    right: auto
+}
+
+.select2-results__option {
+    font-family: 'Alexandria',Readex Pro, Cairo !important;
+    font-size: 13px;
+}
+
+.select2-container .select2-selection--single {
+    font-size: 13px !important
+}
+
+.DDL {
+    font-family: 'Alexandria',Readex Pro, Cairo;
+    width: 100%;
+    padding: 8px;
+    color: #454444;
+    font-size: 13px;
+    border: 1px solid #d6d0d0;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding-right: 8px;
+}
+
+
+.submit-div {
+    padding-top: 20px
+}
+
+.navigation {
+    margin: 0 auto
+}
+
+.page-item.active .page-link {
+    background-color: #757575;
+    border-color: #757575;
+}
+
+.page-link {
+    color: #6aa072
+}
+
+/* Validate Form */
+
+.span-validation {
+    font-size: 12px;
+    color: red;
+    display: none
+}
+
+.submit-div {
+    padding-top: 20px
+}

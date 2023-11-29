@@ -1,0 +1,20 @@
+﻿
+* {
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+}
+
+html,
+body {
+    height: 100%;
+    background: #F1EDEC;
+}
+
+.maincontent {
+    min-height: 100%;
+}
+
+.uper-bar {
+    border-top: 2px solid #cadb4f;
+}

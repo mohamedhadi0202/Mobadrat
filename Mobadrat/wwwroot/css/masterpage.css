@@ -1,0 +1,119 @@
+﻿
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+@font-face {
+    font-family: 'Hacen Tunisia Lt'; /*a name to be used later*/
+    src: url('../fonts/Hacen Tunisia Regular.ttf'); /*URL to font*/
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    direction: rtl;
+}
+
+
+.uper-bar {
+    border-top: 2px solid #cadb4f;
+}
+
+.container-fluid {
+    /*padding-right: 0px !important*/
+}
+
+body, html {
+    height: 100%;
+    text-align: right;
+    /*overflow: scroll;*/
+}
+
+.main-content{
+    padding-left:0;
+    padding-right:0
+}
+
+.content {
+    min-height: 100%
+}
+
+.date-div {
+    text-align: left
+}
+
+.nav-bar {
+    background-color: #222D32;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    z-index: 99
+}
+
+    .nav-bar span {
+        color: #FFFFFF;
+        font-family: 'Alexandria',Readex Pro, Cairo;
+        position: relative;
+        top: 0;
+        font-weight: normal;
+        font-size: 15px;
+    }
+
+    .nav-bar .datespan {
+        color: #FFFFFF;
+        font-family: 'Alexandria',Readex Pro, Cairo;
+        position: relative;
+        font-size: 14px;
+        top: 0;
+        text-align: left
+    }
+
+.fa-face-grin {
+    margin-left: 5px;
+    color: #ffc107;
+    padding-right: 5px;
+    position: relative;
+    top: 0;
+}
+
+.fullname {
+    /*font-weight: bold;*/
+    color: #635353 !important;
+    padding: 0 !important;
+    font-family: 'Alexandria',Readex Pro, Cairo;
+    font-size: 14px
+}
+
+
+footer {
+    height: 50px;
+    margin-top: -50px;
+    background-color: #222D32;
+    color: #2f2f2f;
+    line-height: 50px;
+    padding: 0 20px;
+    text-align: center;
+    font-family: 'Alexandria',Readex Pro, Cairo;
+    /*font-weight:bold;*/
+    font-size: 13px;
+    position: relative;
+    width: 100%;
+    z-index: 99;
+    color: #FFFFFF
+}
+
+
+.select2-container {
+    width: 100% !important
+}
+
+
+@media (min-device-width: 320px) and (max-device-width: 1024px) {
+
+    .date-div {
+        text-align: right !important
+    }
+
+    .date-div {
+        text-align: center !important
+    }
+}

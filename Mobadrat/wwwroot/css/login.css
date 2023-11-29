@@ -1,0 +1,242 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    direction: rtl;
+}
+body {
+    height: 100%;
+    text-align: right;
+    background: #222D32;
+    font-family: 'Alexandria', sans-serif;
+}
+
+.sys-lbl{
+    color:#ECF0F5
+}
+
+.login-title {
+    display: inline-block;
+    margin: 0 0.5rem;
+    animation: headShake; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; /* don't forget to set a duration! */
+}
+
+.login-box {
+    margin-top: 75px;
+    height: auto;
+    background: #1A2226;
+    text-align: center;
+    /*box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);*/
+    /*border-radius:10px*/
+}
+
+.login-key {
+    height: 20px;
+    /*font-size: 80px;*/
+    line-height: 20px;
+    background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-title {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 18px;
+    /*letter-spacing: 2px;*/
+    margin-top: 05px;
+    font-weight: bold;
+    color: #cfdb4e;
+}
+
+.login-form {
+    margin-top: 25px;
+    text-align: right;
+}
+
+.side-div {
+    margin-top: 75px;
+    height: auto;
+    background: #1A2226;
+    text-align: center;
+    padding: 80px;
+}
+
+.side-img img {
+    width: 170px !important;
+    height: 230px !important;
+    /*padding-bottom: 5px*/
+}
+
+input[type=text] {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #cddc39;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #ECF0F5;
+    padding-bottom: 10px;
+    width: 100%
+}
+
+input[type=password] {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #cddc39;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    color: #ECF0F5;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    outline: 0px;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #0DB8DE;
+    outline: 0;
+    background-color: #1A2226;
+    color: #ECF0F5;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.form-control-label {
+    font-size: 10px;
+    color: rgb(197 194 194);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px
+}
+
+.btn-outline-primary {
+    border-color: #cddc39;
+    color: #cddc39;
+    border-radius: 0px;
+    font-weight: normal;
+    /*letter-spacing: 1px;*/
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    width: 150px;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #cddc39;
+        color: #222D32;
+        border: 1px solid #cddc39;
+        right: 0px;
+    }
+
+.btn-register {
+    background-color: #cddc39;
+    border-radius: 0px;
+    border: 1px solid #cddc39;
+    width: 150px;
+}
+
+.login-btm {
+    float: left;
+}
+
+.login-button {
+    padding-right: 0px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-text {
+    text-align: left;
+    padding-left: 0px;
+    color: #A2A4A4;
+}
+
+.loginbttm {
+    padding: 0px;
+}
+
+footer {
+    height: 100px;
+    margin-top: -100px;
+    background-color: #222D32;
+    color: #FFF;
+    line-height: 100px;
+    padding: 0 20px;
+    text-align: center;
+    font-family: 'Alexandria',Readex Pro, Cairo;
+    /*font-weight:bold;*/
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+.nav-bar {
+    background-color: #222D32;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    /*box-shadow: 5px 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);*/
+    z-index: 99;
+    text-align:left
+}
+
+.nav-bar span {
+    color: #FFFFFF;
+    font-family: 'Alexandria',Readex Pro, Cairo;
+    position: relative;
+    top: 0;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+    .nav-bar .datespan {
+        color: #FFFFFF;
+        font-family: 'Alexandria',Readex Pro, Cairo;
+        position: relative;
+        font-size: 12px;
+        top: 0;
+        text-align: left
+    }
+
+@media (min-device-width: 320px) and (max-device-width: 767px) {
+    .side-div {
+        display:none
+    }
+    footer {
+        font-size: 13px;
+    }
+
+    .nav-bar{
+        text-align:center
+    }
+
+    .login-box {
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+
+    .login-title{
+        font-size:15px
+    }
+}
