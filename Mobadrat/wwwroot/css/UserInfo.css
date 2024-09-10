@@ -1,0 +1,48 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    direction: rtl;
+}
+
+body {
+    height: 100%;
+    text-align: right;
+    font-family: 'Hacen Tunisia', sans-serif;
+}
+
+.top-div {
+    margin-top: 20px;
+}
+.top-div-title {
+    font-size: 20px;
+    padding-bottom:10px
+}
+
+.top-div-inside {
+    border-bottom: 3px solid #222d32;
+    font-family: 'Hacen Tunisia', sans-serif;
+    background: #f5f5f5;
+    padding: 10px;
+    color: #9eab41;
+    box-shadow: 6px 1px 7px #efe8e8;
+}
+
+.top-div-label {
+    
+}
+
+.info-div {
+    margin-top: 30px
+}
+
+.label-name{
+
+}
+
+.label-value{
+    color: brown
+}
+
+.fa-user-circle-o {
+    color: #222d32
+}

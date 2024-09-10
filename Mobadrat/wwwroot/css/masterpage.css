@@ -3,7 +3,7 @@
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 @font-face {
-    font-family: 'Hacen Tunisia Lt'; /*a name to be used later*/
+    font-family: 'Hacen Tunisia'; /*a name to be used later*/
     src: url('../fonts/Hacen Tunisia Regular.ttf'); /*URL to font*/
 }
 
@@ -51,7 +51,7 @@ body, html {
 
     .nav-bar span {
         color: #FFFFFF;
-        font-family: 'Alexandria',Readex Pro, Cairo;
+        font-family: 'Hacen Tunisia',Readex Pro, Cairo;
         position: relative;
         top: 0;
         font-weight: normal;
@@ -60,9 +60,9 @@ body, html {
 
     .nav-bar .datespan {
         color: #FFFFFF;
-        font-family: 'Alexandria',Readex Pro, Cairo;
+        font-family: 'Hacen Tunisia',Readex Pro, Cairo;
         position: relative;
-        font-size: 14px;
+        font-size: 15px;
         top: 0;
         text-align: left
     }
@@ -77,10 +77,10 @@ body, html {
 
 .fullname {
     /*font-weight: bold;*/
-    color: #635353 !important;
+    color: #d4d950 !important;
     padding: 0 !important;
-    font-family: 'Alexandria',Readex Pro, Cairo;
-    font-size: 14px
+    font-family: 'Hacen Tunisia',Readex Pro, Cairo;
+    font-size: 15px
 }
 
 
@@ -92,9 +92,9 @@ footer {
     line-height: 50px;
     padding: 0 20px;
     text-align: center;
-    font-family: 'Alexandria',Readex Pro, Cairo;
+    font-family: 'Hacen Tunisia',Readex Pro, Cairo;
     /*font-weight:bold;*/
-    font-size: 13px;
+    font-size: 15px;
     position: relative;
     width: 100%;
     z-index: 99;

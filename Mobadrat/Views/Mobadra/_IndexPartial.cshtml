@@ -1,0 +1,103 @@
+﻿@using X.PagedList.Mvc.Core; <!--import to get HTML Helper-->
+@using X.PagedList;
+@model IEnumerable<Mobadra>
+
+@{
+    ViewData["Title"] = "المبادرات";
+}
+@*<div class="insert-button-div">
+    <div class="container">
+        <div class="row">
+
+            <a onclick="showInPopup('@Url.Action("AddOrEdit","Category",null,Context.Request.Scheme)','إضافة موظف')" class="button-new-record"><i class="fas fa-random"></i> موظف جديد</a>
+        </div>
+    </div>
+</div>*@
+
+<div class="table-div-grid text-center">
+
+    <div class="container">
+        <div class="row">
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            عنوان المبادرة
+                        </th>
+                        <th>
+                           الحالة
+                        </th>
+                        <th>
+                            مدة التنفيذ
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.MobadraTitle
+                            </td>
+                            <td>
+                                @item.Status.StatusName
+                               @* @Html.DisplayFor(modelItem => item.Status.StatusName)*@
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DurationTime.DurationTimeName)
+                            </td>
+                            <td class="td-operations">
+                                <a onclick="showInPopup('@Url.Action("_Edit","Mobadra",new {id=item.MobadraID},Context.Request.Scheme)','تعديل السجل')" class="button-edit-table"><i class="fas fa-pencil-alt"></i> تعديل</a>
+                            </td>
+                            <td class="td-operations">
+                                <form asp-action="Delete" asp-route-id="@item.MobadraID" onsubmit="return jQueryAjaxDelete(this)" class="d-inline">
+                                    <input type="submit" value="حذف" class="button-delete-table" /><i class="fa-solid fa-trash-can"></i>
+                                </form>
+                            </td>
+                            <td class="td-operations">
+                                <a onclick="showAttachInPopup('@Url.Action("AddAttatchIndex","Mobadra",new {id=item.MobadraID},Context.Request.Scheme)','مرفقات المبادرة')" class="button-attach-table"><i class="fas fa-pencil-alt"></i> المرفقات</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                </table>
+        </div>
+    </div>
+</div>
+<div class="pageing-div text-center">
+	<div class="container">
+		<div class="row">
+			@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }),
+			new X.PagedList.Mvc.Common.PagedListRenderOptions
+			{
+			    ContainerDivClasses = new[] { "navigation" },
+			    LiElementClasses = new[] { "page-item" },
+			    PageClasses = new[] { "page-link" },
+			})
+		</div>
+	</div>
+</div>
+
+
+
+@section Scripts{
+    <script>
+        // Workaround to fix style of text for showing items .. through ..
+        // Problem related to Boostrap 4 according to issue in link below
+        // https://github.com/dncuug/X.PagedList/issues/127
+        $(document).ready(function () {
+            $('ul.pagination > li.disabled > a').addClass('page-link');
+        });
+    </script>
+}
+

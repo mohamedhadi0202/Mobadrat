@@ -1,0 +1,313 @@
+﻿html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.table-div-grid {
+    margin-top: 10px;
+    font-family: 'Hacen Tunisia',Readex Pro, Cairo;
+    font-size: 13px;
+}
+
+.insert-button-div {
+    margin-top: 0;
+    font-family: 'Hacen Tunisia',Readex Pro, Cairo;
+}
+
+.button-new-record {
+    background-color: #fcc236;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 3px;
+    width: 120px !important;
+    color: #565656 !important;
+    font-size: 14px !important;
+    border: 1px solid #fcc236;
+    text-align: center
+}
+
+.button-code-table {
+    background-color: #c4af7d;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 3px;
+    width: 65px !important;
+    color: white !important;
+    font-size: 10px !important;
+    border: 1px solid #c4af7d;
+    display: inline-block
+}
+
+.table td, .table th {
+    padding: 0.5rem;
+    font-size: 15px;
+    border-top: none;
+    vertical-align: inherit;
+    font-weight: bold;
+}
+
+.table tr:hover {
+    background-color: antiquewhite;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    cursor: pointer
+}
+
+
+/*.table td {
+    bottom: -5px;
+    position: relative;
+}*/
+
+
+
+.button-attach-table {
+    background-color: #646c6f;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    width: 55px !important;
+    color: white !important;
+    font-size: 13px !important;
+    border: 1px solid #646c6f;
+    display: inline-block;
+    font-family: 'Hacen Tunisia',Readex Pro, Cairo;
+    font-weight: normal;
+}
+
+.table .button-attach-table:hover {
+    background-color: #384246;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+}
+
+.table .td-operations {
+    width: 70px;
+    position: relative
+}
+
+.td-operations .fa-trash-can {
+    position: absolute;
+    right: 55px;
+    color: white;
+    top: 18px;
+    font-size: 10px
+}
+
+.form-control {
+    line-height: 25px;
+    height: 40px;
+    font-size: 14px !important;
+}
+
+.fa-info-circle {
+    left: 40px;
+    bottom: 30px;
+    color: #d19b3d;
+    font-size: 14px;
+    text-align: left;
+    cursor:pointer
+}
+/** Tooltip **/
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    width: 200px;
+    color: #222d32;
+    font-size: 10px;
+    background-color: #eff3f3;
+    border-radius: 10px;
+    padding: 10px 15px 12px 10px;
+}
+
+    .tooltip-text::before {
+        content: "";
+        position: absolute;
+        transform: rotate(45deg);
+        background-color: #eff3f3;
+        padding: 5px;
+        z-index: 2;
+    }
+
+.hover-text:hover .tooltip-text {
+    visibility: visible;
+}
+
+#top {
+    top: -40px;
+    left: -25px;
+}
+
+    #top::before {
+        top: 80%;
+        left: 45%;
+    }
+
+.hover-text {
+    position: absolute;
+    display: inline-block;
+    /*margin: 40px;*/
+    font-family: 'Alexandria',Hacen Tunisia;
+    text-align: center;
+    left: 2%;
+}
+
+/****/
+
+.submit-div {
+    padding-top: 20px
+}
+
+.table .button-edit-table {
+    background-color: #3a7060;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    width: 55px !important;
+    color: white !important;
+    font-size: 13px !important;
+    border: 1px solid #3a7060;
+    display: inline-block;
+    font-family: 'Hacen Tunisia',Readex Pro, Cairo;
+    font-weight: normal;
+}
+
+.table .button-delete-table {
+    background-color: #dc3545;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    width: 55px !important;
+    color: white !important;
+    font-size: 13px !important;
+    border: 1px solid;
+    display: inline-block;
+    font-weight: normal;
+}
+
+.table .button-edit-table:hover {
+    background-color: #2a5246;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+}
+
+.table .button-delete-table:hover {
+    background-color: #9c1f2b;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+}
+
+.fa-file-pdf-o{
+    padding-right: 3px
+}
+
+.navigation {
+    margin: 0 auto
+}
+
+.page-item.active .page-link {
+    background-color: #757575;
+    border-color: #757575;
+}
+
+.page-link {
+    color: #6aa072
+}
+
+.form-group {
+    position: relative;
+    margin-bottom:20px !important
+}
+
+.validatelabel {
+    display: none;
+    color: RED;
+    font-size: 14px;
+    position: relative;
+    bottom: -10px;
+}
+
+.form-control-label {
+    position: absolute;
+    top: 40%;
+    right: 10px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #333;
+    pointer-events: none;
+    -webkit-transition: all 0.15s ease-out 0s;
+    transition: all 0.15s ease-out 0s;
+}
+
+.form-textbox {
+    display: inline-block;
+    font-family: "Hacen Tunisia", Arial, Tahoma;
+    padding: 8px 0;
+    margin: 10px 0 0 0;
+    font-size: 15px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #cadb4f;
+    color: #333;
+    box-shadow: none;
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    width: 100%;
+}
+
+    .form-textbox:focus + label,
+    .form-textbox.has-value + label,
+    textarea:focus + label,
+    textarea.has-value + label {
+        top: 0px;
+        font-size: 15px;
+        color: #8e9b2f;
+    }
+
+textarea:focus + label,
+textarea.has-value + label {
+    top: 30px;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+/* [placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity 0.5s 0.5s ease; 
+  opacity: 0;
+} */
+/* Validate Form */
+
+.span-validation {
+    font-size: 12px;
+    color: red;
+    display: none
+}
+
+.submit-div {
+    padding-top: 20px
+}
+
+.form-control{
+    width:100% !important
+}
+
+.DurationTimeIDList, .VolunteerIDList, .GehaTragetList {
+    width: 100%;
+    padding: 7px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #aeb769;
+}
+
+.control-label {
+    color: #8e9b2f;
+}

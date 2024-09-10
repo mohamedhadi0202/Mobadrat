@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Mobadra>
+@{
+	ViewData["Title"] = "المبادرات";
+}
+<link href="~/css/tabs.css" rel="stylesheet" />
+<link href="~/css/Mobadra.css" rel="stylesheet" />
+<link href="~/css/modeledit.css" rel="stylesheet" />
+<div id="view-all">
+	<div class="container">
+		<div class="row">
+			@*<h2>الأصناف</h2>*@
+			<div class="tabset">
+				<!-- Tab 1 -->
+				<input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+				<label for="tab1">ظهور الكل</label>
+				<!-- Tab 2 -->
+				<input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+				<label for="tab2">إضافة</label>
+
+				<div class="tab-panels">
+					<section id="marzen" class="tab-panel">
+						<div class="row data-grid-div">
+							<div class="col-12">
+								@await Html.PartialAsync("_IndexPartial", Model)
+							</div>
+						</div>
+					</section>
+					<section id="AddTab" class="tab-panel">
+						@await Html.PartialAsync("AddOrEdit",new Mobadra())
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@section scripts{
+	<script src="~/js/Mobadra.js"></script>
+	<script>
+
+
+	</script>
+}

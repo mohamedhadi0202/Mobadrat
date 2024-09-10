@@ -1,0 +1,72 @@
+﻿body {
+}
+
+.CommentsList {
+    width: 100%;
+    padding: 7px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #aeb769;
+}
+
+.validatelabel {
+    display: none;
+    color: RED;
+    font-size: 14px;
+    position: relative;
+    bottom: -10px;
+}
+
+.form-control-label {
+    position: absolute;
+    top: 70%;
+    right: 10px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #333;
+    pointer-events: none;
+    -webkit-transition: all 0.15s ease-out 0s;
+    transition: all 0.15s ease-out 0s;
+}
+
+.form-textbox {
+    display: inline-block;
+    font-family: "Hacen Tunisia", Arial, Tahoma;
+    padding: 8px 0;
+    margin: 10px 0 0 0;
+    font-size: 15px;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #cadb4f;
+    color: #333;
+    box-shadow: none;
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    width: 100%;
+}
+
+    .form-textbox:focus + label,
+    .form-textbox.has-value + label,
+    textarea:focus + label,
+    textarea.has-value + label {
+        top: 0px;
+        font-size: 15px;
+        color: #8e9b2f;
+    }
+
+textarea:focus + label,
+textarea.has-value + label {
+    top: 30px;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.form-inline{
+    width: 100% !important
+}

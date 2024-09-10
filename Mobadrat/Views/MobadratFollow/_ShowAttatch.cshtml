@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MobadraUploadfile>
+
+@{
+	ViewData["Title"] = "المرفقات";
+	int tempMobadraID = Convert.ToInt32(@ViewBag.tempMobadraID);
+	Layout = null;
+}
+
+<div class="table-div-grid text-center">
+
+	<div class="container">
+		<div class="row">
+			<table id="theTable" class="table">
+				<thead>
+					<tr>
+						<th>
+							تحميل الملف
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>
+							@Html.ActionLink(item.Mobadra.MobadraTitle, "DownloadFile", new { fileName = item.FilePath })
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

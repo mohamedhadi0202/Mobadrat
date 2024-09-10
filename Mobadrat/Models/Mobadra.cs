@@ -50,10 +50,10 @@ namespace Mobadrat.Models
 
         [Required]
         [Display(Name = "الحالة")]
-        public string StatusID { get; set; } // Lookup Table
+        public int StatusID { get; set; } = 1; // Lookup Table
 
         [Required]
-        public int CurrentSpotID { get; set; } // Lookup Table
+        public int CurrentSpotID { get; set; } = 1; // Lookup Table
 
 
         [Required]
@@ -62,32 +62,35 @@ namespace Mobadrat.Models
         [Required]
         public bool isActive { get; set; } = true;
 
-        [Required]
-        public DateTime CreateDate { get; set; } = DateTime.Now;
+		[Required]
+		public int UserId { get; set; } //Lookup Table
 
-        [Required]
-        public int CreateUser { get; set; }
+		[Required]
+        public DateTime CreateDate { get; set; } = DateTime.Now;
 
         [ForeignKey("BranchID")]
         public Branch Branch { get; set; }
 
         [ForeignKey("UserId")]
-        public User User { get; set; }
+		public User User { get; set; }
 
         [ForeignKey("DepartmentId")]
-        public Department Department { get; set; }
+		public Department Department { get; set; }
 
         [ForeignKey("CurrentSpotID")]
-        public CurrentSpot CurrentSpot { get; set; }
+		public CurrentSpot CurrentSpot { get; set; }
 
         [ForeignKey("VolunteerID")]
-        public Volunteer Volunteer { get; set; }
+		public Volunteer Volunteer { get; set; }
 
         [ForeignKey("StatusID")]
-        public Status Status { get; set; }
+		public Status Status { get; set; }
 
         [ForeignKey("Geha_TragetID")]
-        public Geha_Traget Geha_Traget { get; set; }
-    }
+		public Geha_Traget Geha_Traget { get; set; }
+
+		[ForeignKey("DurationTimeID")]
+		public DurationTime DurationTime { get; set; }
+	}
 
 }

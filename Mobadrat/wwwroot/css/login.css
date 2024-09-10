@@ -7,11 +7,13 @@ body {
     height: 100%;
     text-align: right;
     background: #222D32;
-    font-family: 'Alexandria', sans-serif;
+    font-family: 'Hacen Tunisia', sans-serif;
 }
 
-.sys-lbl{
-    color:#ECF0F5
+.sys-lbl {
+    color: #ECF0F5;
+    font-size: 18px;
+    font-weight: normal;
 }
 
 .login-title {
@@ -19,6 +21,7 @@ body {
     margin: 0 0.5rem;
     animation: headShake; /* referring directly to the animation's @keyframe declaration */
     animation-duration: 1s; /* don't forget to set a duration! */
+    
 }
 
 .login-box {
@@ -43,9 +46,8 @@ body {
     margin-top: 15px;
     text-align: center;
     font-size: 18px;
-    /*letter-spacing: 2px;*/
+    font-weight: normal;
     margin-top: 05px;
-    font-weight: bold;
     color: #cfdb4e;
 }
 
@@ -63,8 +65,8 @@ body {
 }
 
 .side-img img {
-    width: 170px !important;
-    height: 230px !important;
+    width: 100px !important;
+    height: 130px !important;
     /*padding-bottom: 5px*/
 }
 
@@ -123,21 +125,22 @@ label {
 }
 
 .form-control-label {
-    font-size: 10px;
+    font-size: 14px;
     color: rgb(197 194 194);
     font-weight: bold;
     letter-spacing: 1px;
-    margin-bottom: 20px
+    margin-bottom: 10px
 }
 
 .btn-outline-primary {
     border-color: #cddc39;
     color: #cddc39;
     border-radius: 0px;
-    font-weight: normal;
+    font-weight: bold;
     /*letter-spacing: 1px;*/
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    width: 150px;
+    width: 110px;
+    font-size:14px
 }
 
     .btn-outline-primary:hover {
@@ -151,7 +154,9 @@ label {
     background-color: #cddc39;
     border-radius: 0px;
     border: 1px solid #cddc39;
-    width: 150px;
+    width: 110px;
+    font-size:14px;
+    font-weight:bold
 }
 
 .login-btm {
@@ -182,9 +187,9 @@ footer {
     line-height: 100px;
     padding: 0 20px;
     text-align: center;
-    font-family: 'Alexandria',Readex Pro, Cairo;
+    font-family: 'Hacen Tunisia',Readex Pro, Cairo;
     /*font-weight:bold;*/
-    font-size: 14px;
+    font-size: 15px;
     position: relative;
     width: 100%;
     z-index: 2;
@@ -200,20 +205,20 @@ footer {
     text-align:left
 }
 
-.nav-bar span {
-    color: #FFFFFF;
-    font-family: 'Alexandria',Readex Pro, Cairo;
-    position: relative;
-    top: 0;
-    font-weight: normal;
-    font-size: 15px;
-}
+    .nav-bar span {
+        color: #FFFFFF;
+        font-family: 'Hacen Tunisia',Readex Pro, Cairo;
+        position: relative;
+        top: 0;
+        font-weight: normal;
+        font-size: 15px;
+    }
 
     .nav-bar .datespan {
         color: #FFFFFF;
-        font-family: 'Alexandria',Readex Pro, Cairo;
+        font-family: 'Hacen Tunisia',Readex Pro, Cairo;
         position: relative;
-        font-size: 12px;
+        font-size: 13px;
         top: 0;
         text-align: left
     }

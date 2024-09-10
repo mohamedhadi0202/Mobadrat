@@ -17,5 +17,13 @@ namespace Mobadrat.Data
         public DbSet<Mobadra> Mobadras { get; set; }
         public DbSet<MobadraUploadfile> MobadraUploadfiles { get; set; }
         public DbSet<Department> Departments { get; set; }
+
+        public DbSet<Geha_Traget> geha_Tragets { get; set; }
+		public DbSet<Volunteer> volunteers { get; set; }
+		public DbSet<DurationTime> DurationTimes { get; set; }
+        public DbSet<CurrentSpot> CurrentSpots { get; set; }
+        public DbSet<Status> Statuses { get; set; }
+        public DbSet<MobadraComment> MobadraComments { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }

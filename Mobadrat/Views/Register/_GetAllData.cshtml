@@ -1,0 +1,97 @@
+﻿@model Mobadrat.Models.User
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+
+<form id="studenteForm" asp-controller="Register" asp-action="PostData" autocomplete="off">
+	<div class="container">
+		<div class="row login-box">
+			<input type="hidden" name="CreateDateHijry" value="@TempData["CurrentHijryDate"]" />
+			<input type="hidden" name="BranchName" value="@ViewBag.PARENT_ORG" id="BranchName" />
+			<input type="hidden" name="BranchID" value="@ViewBag.PARENT_ORG_ID" id="BranchID" />
+			<input type="hidden" name="DepartmentName" value="@ViewBag.ORG_NAME" id="DepartmentName" />
+			<input type="hidden" name="DepartmentID" value="@ViewBag.ORGANIZATION_ID" id="DepartmentID" />
+			<input type="hidden" name="EMPLOYEE_ID" value="@ViewBag.EMPLOYEE_ID" id="EMPLOYEE_ID" />
+			<input type="hidden" name="SexName" value="@ViewBag.SEX" id="SexName" />
+
+			<div class="form-group col-6">
+				<label class="form-control-label data-label-show">رقم الهوية : </label>
+				<label class="form-control-label data-label-show" name="NATIONAL_IDENTIFIER">@ViewBag.NATIONAL_IDENTIFIER</label>
+				<input type="hidden" name="IdentityNumber" value="@ViewBag.NATIONAL_IDENTIFIER" id="NATIONAL_IDENTIFIER" />
+			</div>
+			<div class="form-group col-6">
+				<label class="form-control-label data-label-show">اسم الموظف : </label>
+				<label class="form-control-label data-label-show">@ViewBag.Emp_Full_Name</label>
+				<input type="hidden" name="EmployeeFullName" value="@ViewBag.Emp_Full_Name" id="Emp_Full_Name" />
+			</div>
+
+			<div class="form-group col-6">
+				<label class="form-control-label data-label-show">البريد : </label>
+				@*<label class="form-control-label">@ViewBag.EMAIL_ADDRESS</label>*@
+				<label class="form-control-label data-label-show">@ViewBag.EMAIL_ADDRESS</label>
+				<input type="hidden" name="Email" value="@ViewBag.EMAIL_ADDRESS" id="Email" />
+			</div>
+			<div class="form-group col-6">
+				<label class="form-control-label data-label-show">رقم الجوال : </label>
+				<label class="form-control-label data-label-show">@ViewBag.MOBILE</label>
+				<input type="hidden" name="MobileNumber" value="@ViewBag.MOBILE" id="MobileNumber" />
+			</div>
+
+			<div class="form-group col-6">
+				<label class="form-control-label">اسم المستخدم</label>
+				<input class="input-username" type="text" name="UserName" autocomplete="off" />
+			</div>
+			<div class="form-group col-6">
+				<label class="form-control-label">كلمة المرور</label>
+				<input class="input-password" type="password" name="UserPassword" autocomplete="off" />
+			</div>
+
+			<div class="col-lg-12 loginbttm">
+				<div class="col-lg-12 login-btm login-text">
+					<!-- Error Message -->
+				</div>
+				<div class="col-lg-12 login-btm login-button">
+					<button id="SubmitButton" onclick="SubmitForm()" class="btn btn-outline-primary">حفظ</button>
+					@*<input type="text" id="customInput" data-value="@ViewBag.Sucsess" />*@
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+
+	$(document).ready(function () {
+		//var isValid = $('#studenteForm').isValid();
+		//if(isValid){
+		//	alert('ddd')
+		//}
+		//else{
+		//	return false
+		//}
+
+	});
+
+	function SubmitForm(){
+		var data = $("#studenteForm").serialize();
+		//alert(data);
+		$.ajax({
+            type: 'POST',
+			url: "@Url.Action("PostData", "Register")",
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			data: data,
+			caches:false,
+            success: function (result) {
+                alert('Successfully received Data ');
+                console.log(result);
+            },
+            error: function () {
+                alert('Failed to receive the Data');
+                console.log('Failed ');
+            }
+        })
+		alert(url)
+	}
+
+</script>

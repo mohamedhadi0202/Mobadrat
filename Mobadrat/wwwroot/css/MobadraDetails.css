@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.div-emloyee-title {
+    /*border-bottom: 2px solid #222d32;*/
+    font-family: 'Hacen Tunisia', sans-serif;
+    /*background: #f5f5f5;*/
+    padding: 3px;
+    color: #9eab41;
+    box-shadow: 6px 1px 7px #efe8e8;
+    text-align: center;
+    margin-bottom: 10px;
+}
+}

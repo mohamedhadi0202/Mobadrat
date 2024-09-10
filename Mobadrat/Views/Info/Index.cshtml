@@ -1,0 +1,77 @@
+﻿@model User
+
+@{
+	ViewData["Title"] = "بياناتي الشخصيّة";
+}
+<link href="~/css/UserInfo.css" rel="stylesheet" />
+<div class="top-div">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 top-div-inside">
+				<span class="top-div-title"><i class="fa fa-user-circle-o" aria-hidden="true"></i> بياناتي الشخصيّة</span>
+				<label class="top-div-label"></label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="info-div">
+	<div class="container">
+		<div class="row">
+			<div class="col-6 col-lg-2">
+				<label asp-for="IdentityNumber" class="label-name"></label> | 
+			</div>
+			<div class="col-6 col-lg-4">
+				<label class="label-value">@Html.DisplayFor(model => model.IdentityNumber)</label>
+			</div>
+			<div class="col-6 col-lg-2">
+				<label asp-for="EmployeeFullName" class="label-name"></label> |
+			</div>
+			<div class="col-6 col-lg-4">
+				<label class="label-value">@Html.DisplayFor(model => model.EmployeeFullName)</label>
+			</div>
+
+			<div class="col-6 col-lg-2">
+				<label class="label-name">الفرع</label> | 
+			</div>
+			<div class="col-6 col-lg-4">
+				<label class="label-value">@Html.DisplayFor(model => model.BranchName)</label>
+			</div>
+
+			<div class="col-6 col-lg-2">
+				<label class="label-name">الإدارة</label> | 
+			</div>
+			<div class="col-6 col-lg-4">
+				<label class="label-value">@Html.DisplayFor(model => model.DepartmentName)</label>
+			</div>
+
+			<div class="col-6 col-lg-2">
+				<label class="label-name">رقم الجوال</label> | 
+			</div>
+			<div class="col-6 col-lg-4">
+				<label class="label-value">@Html.DisplayFor(model => model.MobileNumber)</label>
+			</div>
+
+			<div class="col-6 col-lg-2">
+				<label class="label-name">البريد الإلكتروني</label> | 
+			</div>
+			<div class="col-6 col-lg-4">
+				<label class="label-value">@Html.DisplayFor(model => model.Email)</label>
+			</div>
+
+			<div class="col-6 col-lg-2">
+				<label class="label-name">الجنس</label> | 
+			</div>
+			<div class="col-6 col-lg-4">
+				<label class="label-value">@Html.DisplayFor(model => model.SexName)</label>
+			</div>
+
+			<div class="col-6 col-lg-2">
+				<label class="label-name">تاريخ إنشاء الحساب</label> | 
+			</div>
+			<div class="col-6 col-lg-4">
+				<label class="label-value">@Html.DisplayFor(model => model.CreateDateHijry)</label>
+			</div>
+		</div>
+	</div>
+</div>

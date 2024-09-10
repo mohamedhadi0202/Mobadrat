@@ -7,7 +7,7 @@ body {
 
 .nav-side-menu {
     overflow: auto;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 200;
     background-color: #222D32;
     position: fixed;
@@ -15,7 +15,8 @@ body {
     width: 280px;
     height: 100%;
     color: #e1ffff;
-    font-family: 'Alexandria';
+    font-family: 'Hacen Tunisia';
+    z-index: 99
 }
 
     .nav-side-menu .brand {
@@ -36,11 +37,8 @@ body {
         list-style: none;
         padding: 0px;
         margin: 0px;
-        line-height: 60px;
+        line-height: 50px;
         cursor: pointer;
-        /*    
-    
-*/
     }
 
 .collapsed .arrow:before {
@@ -108,13 +106,15 @@ body {
     padding-right: 0px;
     border-right: 3px solid #c7bfa8;
     border-bottom: 1px solid #2d3339;
+    display: block
 }
 
     .nav-side-menu li a {
         text-decoration: none;
         color: #e1ffff;
-        padding-right: 10px;
-        font-family: 'Alexandria';
+        /*padding-right: 10px;*/
+        font-family: 'Hacen Tunisia';
+        display:block
     }
 
         .nav-side-menu li a i {
@@ -139,6 +139,7 @@ body {
 .menu-content .fa {
     font-size: 16px;
     padding-right: 10px;
+    margin-left: 10px;
 }
 
 @media (max-width: 767px) {
@@ -219,7 +220,9 @@ body {
     .nav-side-menu .sub-menu li a {
         text-decoration: none;
         color: #e1ffff;
-        font-size:12px
+        font-size:14px;
+        width:100%;
+        display:block
     }
 
 .sub-menu li a i {

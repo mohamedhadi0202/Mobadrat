@@ -1,0 +1,153 @@
+﻿@using X.PagedList.Mvc.Core; <!--import to get HTML Helper-->
+@using X.PagedList;
+@model IEnumerable<Mobadra>
+
+@{
+	ViewData["Title"] = "متابعة المبادرات";
+}
+<div class="insert-button-div">
+	<div class="container">
+		<div class="row">
+		</div>
+	</div>
+</div>
+<div class="table-div-grid text-center">
+
+	<div class="container">
+		<div class="row">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							عنوان المبادرة
+						</th>
+						<th>
+							الفئة المستهدفة
+						</th>
+						<th>
+							اسم الموظف
+						</th>
+						<th>
+							الحالة
+						</th>
+						<th>
+							التفاصيل
+						</th>
+						<th>
+
+						</th>
+						<th>
+
+						</th>
+						<th>
+
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>
+								@item.MobadraTitle
+							</td>
+							<td>
+								@item.MobadraTarget
+							</td>
+							<td>
+								@item.User.EmployeeFullName
+							</td>
+							<td>
+								@item.Status.StatusName
+							</td>
+							@*@if (item.StatusID == 1)
+							{
+								<td class="td-status">
+									<label style="color:brown">حديثة</label>
+								</td>
+							}
+							else if (item.StatusID == 2)
+							{
+								<td class="td-status">
+									<label style="color:#0277bd">استكمال بيانات</label>
+								</td>
+							}
+							else if (item.StatusID == 3)
+							{
+								<td class="td-status">
+									<label style="color:#0277bd">موافقة من ممثل الوكالة</label>
+								</td>
+							}
+							else if (item.StatusID == 4)
+							{
+								<td class="td-status">
+									<label style="color:forestgreen">رفض من ممثل الوكالة</label>
+								</td>
+							}*@
+							<td class="td-operations">
+								<a onclick="showDetailsInPopup('@Url.Action("MobadraDetails","MobadratFollow",new {id=item.MobadraID},Context.Request.Scheme)','التفاصيل')" class="button-edit-table"><i class="fas fa-pencil-alt"></i> تفاصيل</a>
+							</td>
+							<td class="td-operations">
+								<a onclick="showAttatchInPopup('@Url.Action("_ShowAttatch","MobadratFollow",new {id=item.MobadraID},Context.Request.Scheme)','المرفقات')" class="button-edit-table"><i class="fas fa-pencil-alt"></i> المرفقات</a>
+							</td>
+
+							@if (item.StatusID == 1)
+							{
+								<td class="td-operations">
+									<a onclick="jQueryAjaxGetDecision('@Url.Action("MobadraDecision","MobadratFollow",new {id=item.MobadraID},Context.Request.Scheme)','القرار')" class="button-edit-table"><i class="fas fa-pencil-alt"></i> القرار</a>
+								</td>
+							}
+
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="pageing-div text-center">
+	<div class="container">
+		<div class="row">
+			@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page = page }),
+			new X.PagedList.Mvc.Common.PagedListRenderOptions
+			{
+			ContainerDivClasses = new[] { "navigation" },
+			LiElementClasses = new[] { "page-item" },
+			PageClasses = new[] { "page-link" },
+			})
+		</div>
+	</div>
+</div>
+
+@section Scripts{
+	<script>
+		// Workaround to fix style of text for showing items .. through ..
+		// Problem related to Boostrap 4 according to issue in link below
+		// https://github.com/dncuug/X.PagedList/issues/127
+		$(document).ready(function () {
+			$('ul.pagination > li.disabled > a').addClass('page-link');
+		});
+	</script>
+}
+
+@*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    <div id="contentPager">
+
+        @Html.PagedListPager(Model, page => Url.Action("GetData", new { page }))
+
+    </div>*@
+
+
+@*@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+
+<a asp-action="Index" asp-route-page="@(Model.PageIndex-1)" class="btn btn-defult @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index" asp-route-page="@(Model.PageIndex+1)" class="btn btn-defult @prevDisabled">
+    Next
+</a>*@

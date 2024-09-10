@@ -24,10 +24,14 @@ namespace Mobadrat.Models
 
         [Required]
         public DateTime CreateDate { get; set; } = DateTime.Now;
+
         [Required]
-        public int CreateUser { get; set; }
+        public int UserId { get; set; }
 
         [ForeignKey("MobadraID")]
         public Mobadra Mobadra{ get; set; }
+
+        [ForeignKey("UserId")]
+        public User User { get; set; }
     }
 }

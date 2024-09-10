@@ -1,0 +1,30 @@
+﻿.modal-dialog {
+    max-width: 600px !important;
+    margin: 1.75rem auto;
+    font-family: 'Hacen Tunisia',Readex Pro, Cairo;
+}
+
+.button-insert-model {
+    width: 100%;
+    background-color: #cadb4f;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    color: white !important;
+    font-size: 15px !important;
+    border: 1px solid #cadb4f
+}
+
+    .button-insert-model:hover {
+        background-color: #b1bf47;
+    }
+
+.modal-title {
+    margin: 0 auto
+}
+
+.modal-header .close {
+    left: 0;
+    position: absolute;
+    font-size: 35px;
+}

@@ -1,0 +1,52 @@
+﻿@model User
+
+@{
+	ViewData["Title"] = "تغيير كلمة المرور";
+}
+<link rel="stylesheet" href="~/css/NewPassword.css" rel="stylesheet" />
+
+<div class="top-div">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 top-div-inside">
+				<span class="top-div-title"><i class="fa fa-user-circle-o" aria-hidden="true"></i> تغيير كلمة المرور</span>
+				<label class="top-div-label"></label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<form id="formId"  autocomplete="off">
+
+				<div class="col-12 form-group insertform id-tex-div text-right">
+					<input id="UserPassword" name="UserPassword" class="form-textbox text-right">
+					<label name="newPassword" class="form-control-label">كلمة المرور الجديدة</label>
+					<label class="MobadraTitleValidation validatelabel"></</label>
+				</div>
+				<div class="col-12 form-group insertform id-tex-div text-right">
+					<input id="ConfirmUserPassword" name="ConfirmUserPassword" class="form-textbox text-right">
+					<label name="newPasswordConfirm" class="form-control-label">تأكيد كلمة المرور</label>
+					<label class="MobadraDescValidation validatelabel"></label>
+				</div>
+				<div class="form-group submit-div text-center">
+					<input id="SubmitFormNewPassword" type="submit" value="حفظ"  class="button-insert-model" />
+				</div>
+			</form>
+			<span id="msg" style="color:red;" />
+		</div>
+	</div>
+</div>
+@if ((string)TempData["Referrer"] == "SaveSuccess")
+{
+	<div class="container">
+		<div class="row">
+			<div class="col-12 alert alert-success">
+				<strong>تمّ تغيير كلمة المرور بنجاح</strong>
+			</div>
+		</div>
+	</div>
+}
+<script src="~/js/NewPassword.js"></script>

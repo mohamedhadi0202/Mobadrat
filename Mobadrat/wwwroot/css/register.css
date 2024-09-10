@@ -8,11 +8,13 @@ body {
     height: 100%;
     text-align: right;
     background: #222D32;
-    font-family: 'Alexandria', sans-serif;
+    font-family: 'Hacen Tunisia', sans-serif;
 }
 
 .sys-lbl {
-    color: #ECF0F5
+    color: #ECF0F5;
+    font-size: 15px;
+    font-weight:normal
 }
 
 .login-title {
@@ -27,17 +29,28 @@ body {
     height: auto;
     background: #1A2226;
     text-align: center;
-    /*box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);*/
-    /*border-radius:10px*/
+    padding-bottom: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius:10px
 }
 
+.button-div{
+    text-align:center
+}
+
+.data-label-show {
+    font-size: 11px !important;
+    color: #ffc107 !important;
+}
+/*.emp-info{
+    display:none;
+}*/
 .login-key {
     height: 20px;
     /*font-size: 80px;*/
     line-height: 20px;
     background: -webkit-linear-gradient(#27EF9F, #0DB8DE);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
 }
 
@@ -139,7 +152,8 @@ label {
     font-weight: normal;
     /*letter-spacing: 1px;*/
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    width: 150px;
+    width: 110px;
+    font-size:14px
 }
 
     .btn-outline-primary:hover {
@@ -153,7 +167,7 @@ label {
     background-color: #cddc39;
     border-radius: 0px;
     border: 1px solid #cddc39;
-    width: 150px;
+    width: 110px;
 }
 
 .login-btm {
@@ -184,7 +198,7 @@ footer {
     line-height: 100px;
     padding: 0 20px;
     text-align: center;
-    font-family: 'Alexandria',Readex Pro, Cairo;
+    font-family: 'Hacen Tunisia',Readex Pro, Cairo;
     /*font-weight:bold;*/
     font-size: 14px;
     position: relative;
@@ -204,7 +218,7 @@ footer {
 
     .nav-bar span {
         color: #FFFFFF;
-        font-family: 'Alexandria',Readex Pro, Cairo;
+        font-family: 'Hacen Tunisia',Readex Pro, Cairo;
         position: relative;
         top: 0;
         font-weight: normal;
@@ -213,7 +227,7 @@ footer {
 
     .nav-bar .datespan {
         color: #FFFFFF;
-        font-family: 'Alexandria',Readex Pro, Cairo;
+        font-family: 'Hacen Tunisia',Readex Pro, Cairo;
         position: relative;
         font-size: 12px;
         top: 0;

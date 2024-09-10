@@ -1,0 +1,53 @@
+﻿@{
+	Layout = "~/Views/Shared/_LoginLayout.cshtml"; ;
+}
+
+<link href="~/css/login.css" rel="stylesheet" />
+<style>
+	.page-div {
+		padding: 10px;
+		font-family: 'Alexandria', sans-serif;
+	}
+
+	.message-div {
+		padding: 20px;
+		text-align: center
+	}
+
+		.message-div h3 {
+			padding: 10px;
+			color: #cfdb4e
+		}
+</style>
+<header>
+    <div class="container-fluid uper-bar">
+        <div class="row">
+            <div class="nav-bar date-div col-12">
+                <span id="today" class="datespan"></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="page-div">
+	<div class="container">
+		<div class="row">
+			<div class="message-div col-12">
+				<h3>تمّ تسجيل المستخدم بنجاح</h3>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+	$(document).ready(function () {
+		setTimeout(function () {
+			window.location.href = '/Login/Index';
+		}, 5000)
+	});
+
+
+</script>

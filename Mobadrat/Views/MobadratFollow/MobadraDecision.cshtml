@@ -1,0 +1,70 @@
+﻿@model MobadraComment
+@{
+	ViewData["Title"] = "المبادرات";
+	Layout = null;
+}
+<link href="~/css/MobadraDecision.css" rel="stylesheet" />
+<div class="container">
+	<div class="row">
+		<form asp-action="MobadraDecision" asp-controller="MobadratFollow" class="form-inline" onsubmit="return jQueryAjaxPostDecision(this);" autocomplete="off">
+			<div class="form-group col-lg-12">
+				@*<label asp-for="MobadraCommentID" class="control-label"></label>*@
+				<select id="CommentsList" class="CommentsList" asp-for="StatusID" placeholder="اختر القرار" asp-items="ViewBag.StatusID" class="DDL">
+					<option class="optionGroup" value="0" selected disabled>اختر القرار</option>
+				</select>
+				<label class="StatusIDValidation validatelabel"></label>
+			</div>
+			<div class="col-12 form-group insertform id-tex-div text-right">
+				<textarea id="MobadraCommet" asp-for="MobadraCommet" class="form-textbox text-right"></textarea>
+				<label asp-for="MobadraCommet" class="form-control-label"></label>
+				<label class="MobadraCommetValidation validatelabel"></label>
+			</div>
+
+			<div class="form-group submit-div text-center col-lg-12">
+				<input id="SubmitFormMobadraDecision" type="submit" value="حفظ" class="button-insert-model" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<script>
+
+	$('.form-textbox').val("");
+	$('.form-group input, .form-group textarea').focusout(function () {
+		var text_val = $(this).val();
+		if (text_val === "") {
+			console.log("empty!");
+			$(this).removeClass('has-value');
+		} else {
+			$(this).addClass('has-value');
+		}
+	});
+
+	$(document).ready(function () {
+		$('#SubmitFormMobadraDecision').on('click', function () {
+
+			if ($('#CommentsList').prop('selectedIndex') == "0") {
+				$('#CommentsList').css('border-bottom', '1px solid #eb1509');
+				$('.StatusIDValidation').fadeIn();
+				$('.StatusIDValidation').text('يجب اختيار القرار');
+				return false;
+			} else {
+				$('.StatusIDValidation').fadeOut();
+				$('.StatusIDValidation').text('')
+			}
+
+
+			if ($('#MobadraCommet').val() == '') {
+				$('#MobadraCommet').css('border-bottom', '1px solid #eb1509');
+				$('.MobadraCommetValidation').fadeIn();
+				$('.MobadraCommetValidation').text('يجب كتابة السبب');
+				return false
+			} else {
+				$('.MobadraCommetValidation').fadeOut();
+				$('.MobadraCommetValidation').text('')
+			}
+		});
+
+	})
+
+</script>

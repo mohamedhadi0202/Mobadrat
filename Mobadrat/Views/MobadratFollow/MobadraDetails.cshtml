@@ -1,0 +1,97 @@
+﻿@model Mobadra
+
+@{
+	Layout = null;
+}
+<link href="~/css/MobadraDetails.css" rel="stylesheet" />
+<div class="employee-details">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 div-emloyee-title">
+				<span>معلومات الموظف</span>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label class="label-name">اسم الموظف</label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.User.EmployeeFullName)</label>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label class="label-name">هويّة الموظف</label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.User.IdentityNumber)</label>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label class="label-name">جوال الموظف</label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.User.MobileNumber)</label>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label asp-for="BranchID" class="label-name"></label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.Branch.BranchName)</label>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label asp-for="DepartmentId" class="label-name"></label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.Department.DepartmentName)</label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mobadra-details">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 div-emloyee-title">
+				<span>معلومات المبادرة</span>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label asp-for="MobadraTitle" class="label-name"></label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.MobadraTitle)</label>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label asp-for="MobadraDesc" class="label-name"></label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.MobadraDesc)</label>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label asp-for="Geha_TragetID" class="label-name"></label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.Geha_Traget.Geha_TragetName)</label>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label asp-for="VolunteerID" class="label-name"></label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.Volunteer.VolunteerName)</label>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label asp-for="DurationTimeID" class="label-name"></label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.DurationTime.DurationTimeName)</label>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label asp-for="StatusID" class="label-name"></label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.Status.StatusName)</label>
+			</div>
+			<div class="col-6 col-lg-3">
+				<label asp-for="MobadraImplement" class="label-name"></label>
+			</div>
+			<div class="col-6 col-lg-9">
+				<label class="label-value">@Html.DisplayFor(model => model.MobadraImplement)</label>
+			</div>
+		</div>
+	</div>
+</div>

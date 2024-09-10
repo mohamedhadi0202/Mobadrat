@@ -1,0 +1,161 @@
+﻿@model Mobadra
+@{
+	ViewData["Title"] = "AddOrEdit";
+	Layout = null;
+}
+<link href="~/css/uploadfile.css" rel="stylesheet" />
+<div class="container">
+	<div class="row">
+		
+		@*<div class="col-md-12">*@
+		<form asp-action="AddOrEdit" asp-controller="Mobadra" class="form-inline" onsubmit="return jQueryAjaxPost(this);" autocomplete="off">
+			@*<input type="hidden" asp-for="MobadraID">
+			<input type="hidden" asp-for="UserId" name="ViewBag.UserId" />
+			<input type="hidden" asp-for="BranchID" name="ViewBag.BranchID" />
+			<input type="hidden" asp-for="DepartmentId" name="ViewBag.DepartmentId" />*@
+			
+			<div class="col-12 form-group insertform id-tex-div text-right">
+				<input id="MobadraTitle" asp-for="MobadraTitle" class="form-textbox text-right">
+				<label asp-for="MobadraTitle" name="MobadraTitle" class="form-control-label"></label> 
+				<label class="hover-text">
+					<i class="fa fa-question-circle" aria-hidden="true"></i>
+					<span class="tooltip-text" id="top">تعريف بالمبادرة وعنوانها</span>
+				</label>
+				<label class="MobadraTitleValidation validatelabel"></</label>
+			</div>
+			<div class="col-12 form-group insertform id-tex-div text-right">
+				<textarea id="MobadraDesc" asp-for="MobadraDesc" class="form-textbox text-right"></textarea>
+				<label asp-for="MobadraDesc" name="MobadraDesc" class="form-control-label"></label>
+				<label class="hover-text">
+					<i class="fa fa-question-circle" aria-hidden="true"></i>
+					<span class="tooltip-text" id="top">نبذة مختصرة عن المبادرة ووصفها</span>
+				</label>
+				<label class="MobadraDescValidation validatelabel"></label>
+			</div>
+			<div class="col-12 form-group insertform id-tex-div text-right">
+				<input id="MobadraTarget" asp-for="MobadraTarget" class="form-textbox text-right">
+				<label asp-for="MobadraTarget" name="MobadraTarget" class="form-control-label"></label>
+				<label class="hover-text">
+					<i class="fa fa-question-circle" aria-hidden="true"></i>
+					<span class="tooltip-text" id="top">إلى ماذا تهدف المبادرة لتحقيقه؟</span>
+				</label>
+				<label class="MobadraTargetValidation validatelabel"></label>
+			</div>
+			<div class="col-12 form-group insertform id-tex-div text-right">
+				<input id="MobadraImplement" asp-for="MobadraImplement" class="form-textbox text-right">
+				<label asp-for="MobadraImplement" name="MobadraImplement" class="form-control-label"></label>
+				<label class="hover-text">
+					<i class="fa fa-question-circle" aria-hidden="true"></i>
+					<span class="tooltip-text" id="top">ما هي الآلية لتنفيذ المبادرة؟</span>
+				</label>
+				<label class="MobadraImplementValidation validatelabel"></label>
+			</div>
+			@*<div class="form-group col-lg-6">
+			<label asp-for="MobadraTitle" name="MobadraTitle" class="control-label"></label>
+			<input id="MobadraTitle" asp-for="MobadraTitle" class="form-control" />
+			<span id="MobadraTitleValidation" class="span-validation"></span>
+			</div>
+			<div class="form-group col-lg-12">
+			<label asp-for="MobadraDesc" name="MobadraDesc" class="control-label"></label>
+			<input id="MobadraDesc" asp-for="MobadraDesc" class="form-control" />
+			<span id="MobadraDescValidation" class="span-validation"></span>
+			</div>
+			<div class="form-group col-lg-12">
+			<label asp-for="MobadraTarget" name="MobadraDesc" class="control-label"></label>
+			<input id="MobadraTarget" asp-for="MobadraTarget" class="form-control" />
+			<span id="MobadraTargetValidation" class="span-validation"></span>
+			</div>
+			<div class="form-group col-lg-12">
+			<label asp-for="MobadraImplement" name="MobadraDesc" class="control-label"></label>
+			<input id="MobadraImplement" asp-for="MobadraImplement" class="form-control" />
+			<span id="MobadraImplementValidation" class="span-validation"></span>
+			</div>
+			<div class="col-12 form-group insertform id-tex-div text-right">
+			<input id="MobadraImplement" asp-for="MobadraImplement" class="form-textbox text-right">
+			<label asp-for="MobadraImplement" name="MobadraImplement" class="form-control-label"></label>
+			<label class="MobadraImplementValidation validatelabel">خطأ</label>
+			</div>*@
+			<div class="form-group col-lg-6">
+				<label asp-for="Geha_TragetID" class="control-label"></label>
+				<select id="Geha_TragetList" class="GehaTragetList" asp-for="Geha_TragetID" id="Geha_TragetList" placeholder="Select Geha" asp-items="ViewBag.Geha_TragetID" class="DDL">
+					<option class="optionGroup" value="0" selected disabled>اختر الجهة</option>
+				</select>
+				<span id="CategoryIdValidate" class="span-validation"></span>
+			</div>
+			<div class="form-group col-lg-6">
+				<label asp-for="VolunteerID" class="control-label"></label>
+				<select id="VolunteerIDtList" class="VolunteerIDList" asp-for="VolunteerID" id="Geha_TragetList" placeholder="Select Geha" asp-items="ViewBag.VolunteerID" class="DDL">
+					<option class="optionGroup" value="0" selected disabled>اختر المتطوعين</option>
+				</select>
+				<span id="CategoryIdValidate" class="span-validation"></span>
+			</div>
+			<div class="form-group col-lg-6">
+				<label asp-for="DurationTimeID" class="control-label"></label>
+				<select id="DurationTimeIDtList" class="DurationTimeIDList" asp-for="DurationTimeID" id="Geha_TragetList" placeholder="Select Geha" asp-items="ViewBag.DurationTimeID" class="DDL">
+					<option class="optionGroup" value="0" selected disabled>اختر المدة</option>
+				</select>
+				<span id="CategoryIdValidate" class="span-validation"></span>
+			</div>
+			<div class="form-group col-lg-6">
+				<div class="label-upload-div text-right">
+					<label class="control-label">إضافة المرفق</label>
+				</div>
+				<div class="file-upload">
+					<div class="file-select">
+						<div class="file-select-button" id="fileName">اختر ملف</div>
+						<div class="file-select-name" id="noFile">لا يوجد ملفات مرفقة ...</div>
+						<input type="file" name="FilePath" id="FileUpload1" />
+					</div>
+				</div>
+				<div class="">
+					<label class="filesTypes"> الملفات المسموح بتحميلها <i class="fa fa-file-pdf-o" aria-hidden="true"></i></label>
+				</div>
+				<label class="validLabelAttach" style="display:none"></label>
+				<span id="CategoryIdValidate" class="span-validation"></span>
+			</div>
+
+			<div class="form-group submit-div text-center col-lg-12">
+				<input id="SubmitForm" type="submit" value="حفظ" class="button-insert-model" />
+			</div>
+		</form>
+		@*</div>*@
+	</div>
+</div>
+
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+    }
+
+<script>
+	$(document).ready(function () {
+		function uploadFile() {
+			$('#FileUpload1').bind('change', function () {
+				var filename = $("#FileUpload1").val();
+				if (/^\s*$/.test(filename)) {
+					$(".file-upload").removeClass('active');
+					$("#noFile").text("لا يوجد ملفات مرفقة ...");
+				}
+				else {
+					$(".file-upload").addClass('active');
+					$("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+					//$('.file-select-button').text('أرفع الملف');
+				}
+			});
+		}
+		uploadFile();
+	})
+	$('.form-textbox').val("");
+	$('.form-group input, .form-group textarea').focusout(function () {
+		var text_val = $(this).val();
+		if (text_val === "") {
+			console.log("empty!");
+			$(this).removeClass('has-value');
+		} else {
+			$(this).addClass('has-value');
+		}
+	});
+
+</script>

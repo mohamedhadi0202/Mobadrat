@@ -1,0 +1,104 @@
+﻿@model IEnumerable<MobadraUploadfile>
+
+@{
+	ViewData["Title"] = "المرفقات";
+	int tempMobadraID = Convert.ToInt32(@ViewBag.tempMobadraID);
+	Layout = null;
+}
+
+<style>
+
+	#divLargerImage {
+		display: none;
+		width: 500px;
+		height: 600px;
+		position: absolute;
+		top: 2%;
+		left: 46%;
+		z-index: 99;
+	}
+
+	#divOverlay {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #343a40;
+		opacity: 0.8;
+		width: 100%;
+		height: 100%;
+		z-index: 98;
+	}
+
+</style>
+
+@*<div class="img-div">
+    <div class="container">
+        <div class="row">
+            <div id="divLargerImage" class="col-12"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="insert-button-div">
+    <div class="container">
+        <div class="row">
+            <a onclick="showDiv('@Url.Action("test","Home",null,Context.Request.Scheme)','مرفق جديد')" class="button-new-record"><i class="fas fa-random"></i> مرفق جديد</a>
+        </div>
+    </div>
+</div>*@
+
+@*@await Html.PartialAsync("CreateAttatch",new Mobadra())*@
+
+<div class="table-div-grid text-center">
+
+	<div class="container">
+		<div class="row">
+			<table id="theTable" class="table">
+				<thead>
+					<tr>
+						<th>
+							تحميل الملف
+						</th>
+						<th>
+
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>
+								@Html.ActionLink(item.Mobadra.MobadraTitle, "DownloadFile", new { fileName = item.FilePath })
+								@*@item.Mobadra.MobadraTitle*@
+							</td>
+							<td class="td-operations">
+								<form asp-action="DeleteAttatch" asp-route-id="@item.FileId" onsubmit="return jQueryAjaxAttatchDelete(this)" class="d-inline">
+									<input type="submit" value="حذف" class="button-delete-table" /><i class="fa-solid fa-trash-can"></i>
+								</form>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+<div id="divOverlay"></div>
+
+<script>
+
+	$('a .myImg').click(function () {
+		var $img = $(this);
+		$('#divLargerImage').html($img.clone().height(600).width(800)).add($('#divOverlay')).fadeIn();
+	});
+	$('#divLargerImage').add($('#divOverlay')).click(function () {
+		$('#divLargerImage').add($('#divOverlay')).fadeOut(function () {
+			$('#divLargerImage').empty();
+		});
+	});
+</script>

@@ -1,5 +1,7 @@
-﻿using System;
+﻿
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mobadrat.Models
 {
@@ -13,13 +15,25 @@ namespace Mobadrat.Models
         [Display(Name = "السبب")]
         public string MobadraCommet { get; set; }
 
+        [Display(Name = "القرار")]
+		public int StatusID { get; set; } // drop down value
 
-        public int MobadraID { get; set; }
+		public int MobadraID { get; set; }
 
-        public int CreateUser { get; set; }
+        public int UserId { get; set; }
 
         public DateTime CreateDate { get; set; } = DateTime.Now;
 
-        public string MobadratStatus { get; set; }
-    }
+        public bool isDeleted { get; set; } = false;
+
+
+		[ForeignKey("MobadraID")]
+		public Mobadra Mobadra { get; set; }
+
+		[ForeignKey("UserId")]
+        public User User { get; set; }
+
+		[ForeignKey("StatusID")]
+		public Status Status { get; set; }
+	}
 }

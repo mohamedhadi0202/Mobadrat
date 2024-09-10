@@ -1,74 +1,157 @@
 ﻿@model User
 
 @{
-    Layout = "~/Views/Shared/_LoginLayout.cshtml"; ;
+	Layout = "~/Views/Shared/_LoginLayout.cshtml"; ;
 }
 
 <link rel="stylesheet" href="~/css/register.css" />
 
 
 <header>
-    <div class="container-fluid uper-bar">
-        <div class="row">
-            <div class="nav-bar date-div col-12">
-                <span id="today" class="datespan"></span>
-            </div>
-        </div>
-    </div>
+	<div class="container-fluid uper-bar">
+		<div class="row">
+			<div class="nav-bar date-div col-12">
+				<span id="today" class="datespan"></span>
+			</div>
+		</div>
+	</div>
 </header>
 <div class="container">
-    <div class="row">
-        @*<div class="col-lg-6 col-md-2">
-            
-        </div>*@
-        <div class="col-lg-12 col-md-12 login-box">
-            <div class="col-lg-12 login-title">
-                <label class="sys-lbl">تسجيل جديد</label>
-            </div>
+	<div class="row">
+		<div class="col-lg-12 col-md-12 login-box">
+			<div class="col-lg-12 login-title">
+				<label class="sys-lbl">تحقق برقم الهويّة</label>
+			</div>
+			<form method="GET" asp-controller="Register" asp-action="CreateUser">
+				<div class="col-lg-12 login-form">
+					<div class="col-lg-12 login-form">
+						@*<form method="post" enctype="multipart/form-data" asp-controller="Register" asp-action="GetAllData">
+								<div class="form-group">
+								<label class="form-control-label">رقم الهوية</label>
+								<input id="IdNumberText" class="input-text" type="text" maxlength="10" name="IdentityNumber" autocomplete="off"  />
+								<button id="checkBtn" type="submit" class="btn btn-outline-primary">تحقق</button>
+							</div>
+						</form>*@
 
-            <div class="col-lg-12 login-form">
-                <div class="col-lg-12 login-form">
-                    <form method="post" enctype="multipart/form-data" asp-controller="Register" asp-action="GetAllData">
-                        <div class="form-group">
-                            <label class="form-control-label">رقم الهوية</label>
-                            <input class="input-text" type="text" name="IdentityNumber" autocomplete="off"  />
-                            <button type="submit" class="btn btn-outline-primary">تحقق</button>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-           <div class="col-lg-12 login-form">
-                <div class="col-lg-12 login-form">
-                    <form method="post" enctype="multipart/form-data" asp-controller="Register" asp-action="Index">
-                        <div class="form-group col-6">
-                            <label class="form-control-label">اسم المستخدم</label>
-                            <input class="input-username" type="text" name="UserName" autocomplete="off"  />
-                        </div>
-                        <div class="form-group col-6">
-                            <label class="form-control-label">كلمة المرور</label>
-                            <input class="input-password" type="password" name="UserPassword" autocomplete="off"  />
-                        </div>
-                        <div class="form-group col-4">
-                            <label class="form-control-label">اسم الموظف</label>
-                            <label class="form-control-label" name="EmpFullName">@ViewBag.Emp_Full_Name</label>
-                            @*<input class="input-username" type="text" name="UserName" value="@ViewBag.Emp_Full_Name" autocomplete="off"  />*@
-                        </div>
-                        <div class="form-group col-4">
-                            <label class="form-control-label">رقم الجوال</label>
-                            <label class="form-control-label" name="MOBILE">@ViewBag.MOBILE</label>
-                        </div>
-                        <div class="col-lg-12 loginbttm">
-                            <div class="col-lg-12 login-btm login-text">
-                                <!-- Error Message -->
-                            </div>
-                            <div class="col-lg-12 login-btm login-button">
-                                <button type="submit" class="btn btn-outline-primary">حفظ</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+						<div class="button-div">
+							@*<input id="IdNumberText" type="text" name="userId" />*@
+							<input id="userIdValue" class="input-text" maxlength="10" onkeyup="numOnly(this)" type="text" name="userIdValue" autocomplete="off" />
+							<button id="checkBtn" class="btn btn-outline-primary">تحقق</button>
+							<div class="col-12" style="text-align:right">
+								<label class="userIdValueValidation" style="display:none"></label>
+							</div>
+							@*<a href="/Register/CreateUser" class="nav-link text-dark" onclick="LoadDataContent()" id="btnShow">CreateStudent</a>*@
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
+
+<div id="partial_view">
+</div>
+
+<script>
+	//function LoadDataContent() {
+	//	$.ajax({
+	//		type: 'GET',
+	//		url: "@Url.Action("GetAllData", "Register")",
+	//		data: { userId: $("#userIdValue").val() },
+	//		cache: false,
+	//		async: false,
+	//		success: function (data) {
+	//			$('#partial_view').html(data);
+	//		},
+	//		error: function (xhr, ajaxoptions, thrownError) {
+	//			alert('not found')
+	//		}
+	//	})
+	//}
+	//function LoadDataContent() {
+	//	$.ajax({
+	//		url: '/Register/CreateUser',
+	//		type: 'get',
+	//		data: { userIdValue: $("#userIdValue").val() },
+	//		dataType: 'html',
+	//		processData: false,
+	//		success: function (data) {
+	//			container.html(data);
+	//			window.location.replace("/Register/CreateUser");
+	//		}
+	//	});
+	//}
+
+	$(document).ready(function () {
+		$("#checkBtn").on("click", function () {
+			if ($("#userIdValue").val() == "") {
+				$(".userIdValueValidation").css("color", "red");
+				$(".userIdValueValidation").text("** حقل إلزامي");
+				$(".userIdValueValidation").slideDown();
+				return false
+			}
+			else {
+				
+			}
+
+			if ($("#userIdValue").val().length < 10) {
+				$(".userIdValueValidation").css("color", "red");
+				$(".userIdValueValidation").text("** رقم الهوية أقل من 10 أرقام");
+				$(".userIdValueValidation").slideDown();
+				return false
+			}
+			else {
+
+			}
+
+		//	try {
+		//		$.ajax({
+		//			type: 'POST',
+		//			url: '/Register/Index',
+		//			data: new FormData(form),
+		//			contentType: false,
+		//			processData: false,
+		//			success: function (res) {
+		//				if (res.isExistInDB == true) {
+		//						swal({
+		//							title: 'المستخدم موجود مسبقا!',
+		//							type: 'warning',
+		//							timer: 4000,
+		//							confirmButtonText: 'شكرًا لك'
+		//						});
+		//					}
+		//			},
+		//			error: function (err) {
+		//				console.log(err)
+		//			}
+		//		})
+		//		//to prevent default form submit event
+		//		return false;
+		//	} catch (ex) {
+		//		console.log(ex)
+		//	}
+		//});
+
+
+	})
+	function numOnly(selector) {
+		selector.value = selector.value.replace(/[^0-9]/g, '');
+	}
+
+	function LoadDataContent() {
+		$.ajax({
+			type: 'GET',
+			url: "@Url.Action("CreateUser", "Register")",
+			data: { userId: $("#userIdValue").val() },
+			cache: false,
+			async: false,
+			success: function (data) {
+
+			},
+			error: function (xhr, ajaxoptions, thrownError) {
+				alert('not found')
+			}
+		})
+	}
+
+</script>

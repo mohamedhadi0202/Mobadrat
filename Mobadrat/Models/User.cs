@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mobadrat.Models
 {
     public class User
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Display(Name = "User ID")]
         public int UserId { get; set; }
@@ -37,10 +39,10 @@ namespace Mobadrat.Models
         [Required]
         public int EMPLOYEE_ID { get; set; }
         [Required]
-        public int UserTypeId { get; set; }
+        public int UserTypeId { get; set; } = 3;
         [Required]
-        public int MobileNumber{ get; set; }
-        public string SexID { get; set; }
+        public string MobileNumber{ get; set; }
+        public string SexName { get; set; }
         public string Email{ get; set; }
 
         public bool isActive { get; set; } = true;
@@ -55,6 +57,5 @@ namespace Mobadrat.Models
         public Branch Branch { get; set; }
 
         public Department Department { get; set; }
-        public Sex Sex { get; set; }
     }
 }

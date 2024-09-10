@@ -1,0 +1,56 @@
+﻿@using Mobadrat.Models.ViewModels;
+@model NewAttachmentViewModel
+@{
+	ViewData["Title"] = "Create";
+	Layout = null;
+}
+
+<div class="row">
+	<div class="col-md-12">
+		<form asp-action="CreateAttatch" asp-controller="Mobadra" asp-route-id="@Model.MobadraID" enctype="multipart/form-data" class="div-add-attatch" onsubmit="return jQueryAjaxPostAttatch(this);" autocomplete="off">
+			<div class="insert-button-div">
+				<div class="container">
+					<div class="row">
+						<div class="attachInfo col-12">
+							<div class="col-sm-12 text-center">
+								<h3 class="form-title">إضافة مرفق</h3>
+								<input type="hidden" name="tempMobadraID" value="@ViewBag.tempMobadraID" />
+								@*<input asp-for="FilePath" />*@
+							</div>
+							<div class="form-group uploadDiv col-md-12">
+								<div class="row">
+									<div class="col-md-2 text-center">
+										<label for="form-text" class="Attach-label">المرفق</label>
+									</div>
+									<div class="col-md-10 text-right">
+										<div class="file-upload-popup">
+											<div class="file-select">
+												<div class="file-select-button" id="fileName">اختر ملف</div>
+												<div class="file-select-name" id="noFilePopup">لا يوجد ملفات مرفقة ...</div>
+												<input type="file" asp-for="FilePath" id="FileUploadPopup" />
+											</div>
+										</div>
+										<div>
+											<label class="filesTypes">الملفات المسموح بتحميلها صيغة <i class="fa fa-file-pdf-o" aria-hidden="true"></i></label>
+
+										</div>
+										<label class="validLabelAttach" style="display:none"></label>
+									</div>
+								</div>
+							</div>
+							<div class="form-footer text-center">
+								<input id="SubmitAttatchForm" type="submit" value="إضافة" class="button-insert-model" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<script src="~/js/createattatch.js"></script>
+
+<script>
+	
+
+</script>

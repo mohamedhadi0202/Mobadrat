@@ -1,4 +1,4 @@
-﻿using Amazon.EC2;
+﻿
 using System.ComponentModel.DataAnnotations;
 
 namespace Mobadrat.Models
